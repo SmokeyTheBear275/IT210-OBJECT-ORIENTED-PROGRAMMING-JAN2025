@@ -1,3 +1,10 @@
+/**Hayden Ross
+ * M1.4 Programming Assignment 1 
+ * intake two variables of a Cylinder - radius and length
+ * calculate the Cylinder area and volume
+ * output radius, length, area, and volume
+ */
+
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
@@ -15,7 +22,8 @@ public class Cylinder
        radius = inputDevice.nextDouble();
        System.out.print("Enter Length >> ");
        length = inputDevice.nextDouble();
-       
+       inputDevice.close();
+      
        //Create and calculate rest of variables//
        double bottomArea = radius * radius * 3.14159;
        double cylinderVolume = bottomArea * length;
