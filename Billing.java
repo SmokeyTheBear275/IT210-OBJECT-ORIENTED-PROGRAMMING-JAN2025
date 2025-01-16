@@ -20,6 +20,7 @@ public class Billing
         boolean ynQuantity; 
         boolean ynCouponValue;
         boolean ynWeeklyDiscount;
+        String answer
 
         //create scanner
         Scanner in = new Scanner(System.in);
@@ -39,7 +40,7 @@ public class Billing
         //ask if buying more than one and set a boolean based on answer.
         System.out.println("Are you buying more than one? y/n");
         while (true) {
-        String answer = in.nextLine().trim().toLowerCase();
+        answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynQuantity = true;
             answer = "";
