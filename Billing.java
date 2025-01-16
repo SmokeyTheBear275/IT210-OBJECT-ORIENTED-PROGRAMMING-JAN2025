@@ -20,7 +20,7 @@ public class Billing
         boolean ynQuantity; 
         boolean ynCouponValue;
         boolean ynWeeklyDiscount;
-        String answer
+        String answer;
 
         //create scanner
         Scanner in = new Scanner(System.in);
@@ -75,12 +75,12 @@ public class Billing
         answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynCouponValue = true;
-            string answer = "";
+            answer = " ";
             break;
             } 
         else if (answer.equals("n")) {
             ynCouponValue = false;
-            string answer = "";
+            answer = " ";
             break;
             } 
         else {
@@ -107,12 +107,12 @@ public class Billing
         answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynWeeklyDiscount = true;
-            string answer = "";
+            answer = " ";
             break;
             } 
         else if (answer.equals("n")) {
             ynWeeklyDiscount = false;
-            string answer = "";
+            answer = " ";
             break;
             } 
         else {
