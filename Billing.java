@@ -20,7 +20,7 @@ public class Billing
 
         boolean ynQuantity
         boolean ynCouponValue
-        boolena weeklyDiscount
+        boolean ynWeeklyDiscount
 
         //create scanner
         Scanner keyboard = new Scanner(System.in);
@@ -55,20 +55,117 @@ public class Billing
         }
         
         //If more than 1 book determine how many
-        if (ynQuantity)
+        while (ynQuantity)
         {
-            while (true) {
-                System.out.println("Enter the material cost: ");
-                try {
-                    costOfMaterial = Double.parseDouble(keyboard.nextLine());
-                    break;
-                }
-                catch (NumberFormatException ignore) {
-                    System.out.println("Error not a number");
-                }
+            System.out.println("Enter the amount of books: ");
+            try {
+                quantity = Integer.parseInt(keyboard.nextLine());
+                break;
+            }
+            catch (NumberFormatException ignore) {
+                System.out.println("Error not a number");
             }
         }
-    }
+
+        //ask if there is a coupon present
+        System.out.println("Is there a coupon? y/n");
+        while (true) {
+        answer = in.nextLine().trim().toLowerCase();
+        if (answer.equals("y")) {
+            ynCouponValue = true;
+            break;
+            } 
+        else if (answer.equals("n")) {
+            ynCouponValue = false;
+            break;
+            } 
+        else {
+            System.out.println("Answer y/n");
+            }
+        }
+        
+        //If there is a coupon how much is it worth
+        while (ynCouponValue)
+        {
+            System.out.println("Enter the coupon value: ");
+            try {
+                couponValue = Double.parseDouble(keyboard.nextLine());
+                break;
+            }
+            catch (NumberFormatException ignore) {
+                System.out.println("Error not a number");
+            }
+        }
+
+        //ask if there is a weekly discount
+        System.out.println("Is there a weekly discount? y/n");
+        while (true) {
+        answer = in.nextLine().trim().toLowerCase();
+        if (answer.equals("y")) {
+            ynWeeklyDiscount = true;
+            break;
+            } 
+        else if (answer.equals("n")) {
+            ynCouponValue = false;
+            break;
+            } 
+        else {
+            System.out.println("Answer y/n");
+            }
+        }
+
+        //If there is a weekly discount how much is it worth
+        while (ynWeeklyDiscount)
+        {
+            System.out.println("Enter the weekly discount: ");
+            try {
+                weeklyDiscount = Double.parseDouble(keyboard.nextLine());
+                break;
+            }
+            catch (NumberFormatException ignore) {
+                System.out.println("Error not a number");
+            }
+        }
+        
+        //define decimal format to look like money for display to user
+        DecimalFormat money = new DecimalFormat(".00");
+
+        //begin checking booleans to determine appropriate method and generate more flexibility in the code
+        if (!ynQuantity && !ynCouponValue && !ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price)));
+        }
+        
+        if (!ynQuantity && ynCouponValue && !ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,1,couponValue)));
+        }      
+
+        if (!ynQuantity && ynCouponValue && ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,1,couponValue,weeklyDiscount)));
+        }   
+        
+        if (!ynQuantity && !ynCouponValue && ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,1,0,weeklyDiscount)));
+        }   
+        
+        if (ynQuantity && !ynCouponValue && !ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,quantity)));
+        }        
+        
+        if (ynQuantity && ynCouponValue && !ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,quantity,couponValue)));
+        }            
+
+        if (ynQuantity && ynCouponValue && ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,quantity,couponValue,weeklyDiscount)));
+        }   
+        
+        if (ynQuantity && !ynCouponValue && ynWeeklyDiscount) {
+            System.out.println("The total price is $" + money.format(computeBill(price,quantity,0,weeklyDiscount)));
+        }   
+
+
+        
+        }
 
     //Start of overload computeBill class
 static double computeBill (double price)
