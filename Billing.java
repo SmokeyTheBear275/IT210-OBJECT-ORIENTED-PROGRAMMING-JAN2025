@@ -28,7 +28,7 @@ public class Billing
         while (true) {
             System.out.println("Enter book cost: ");
             try {
-                price = Double.parseDouble(keyboard.nextLine());
+                price = Double.parseDouble(in.nextLine());
                 break;
             }
             catch (NumberFormatException ignore) {
@@ -39,13 +39,15 @@ public class Billing
         //ask if buying more than one and set a boolean based on answer.
         System.out.println("Are you buying more than one? y/n");
         while (true) {
-        answer = in.nextLine().trim().toLowerCase();
+        string answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynQuantity = true;
+            answer = "";
             break;
             } 
         else if (answer.equals("n")) {
             ynQuantity = false;
+            answer = "";
             break;
             } 
         else {
@@ -72,10 +74,12 @@ public class Billing
         answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynCouponValue = true;
+            string answer = "";
             break;
             } 
         else if (answer.equals("n")) {
             ynCouponValue = false;
+            string answer = "";
             break;
             } 
         else {
@@ -102,10 +106,12 @@ public class Billing
         answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynWeeklyDiscount = true;
+            string answer = "";
             break;
             } 
         else if (answer.equals("n")) {
             ynWeeklyDiscount = false;
+            string answer = "";
             break;
             } 
         else {
