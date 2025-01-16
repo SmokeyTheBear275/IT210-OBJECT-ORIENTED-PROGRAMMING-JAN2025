@@ -43,12 +43,12 @@ public class Billing
         answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynQuantity = true;
-            answer = "";
+            answer = " ";
             break;
             } 
         else if (answer.equals("n")) {
             ynQuantity = false;
-            answer = "";
+            answer = " ";
             break;
             } 
         else {
