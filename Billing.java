@@ -1,11 +1,11 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
 
 /**
  * Hayden Ross
  * M3.4 Programming Assignment 2
  * Create four overloaded methods for computing price
- * 
- * I set the numbers in all the math to variables so they can be easily changed like discount percentage
- * I also added error checks to input because I was curious how to do it
+ * I attempted to use if then in order to allow more options
  */
 
 public class Billing
@@ -39,7 +39,7 @@ public class Billing
         //ask if buying more than one and set a boolean based on answer.
         System.out.println("Are you buying more than one? y/n");
         while (true) {
-        string answer = in.nextLine().trim().toLowerCase();
+        String answer = in.nextLine().trim().toLowerCase();
         if (answer.equals("y")) {
             ynQuantity = true;
             answer = "";
@@ -60,7 +60,7 @@ public class Billing
         {
             System.out.println("Enter the amount of books: ");
             try {
-                quantity = Integer.parseInt(keyboard.nextLine());
+                quantity = Integer.parseInt(in.nextLine());
                 break;
             }
             catch (NumberFormatException ignore) {
@@ -92,7 +92,7 @@ public class Billing
         {
             System.out.println("Enter the coupon value: ");
             try {
-                couponValue = Double.parseDouble(keyboard.nextLine());
+                couponValue = Double.parseDouble(in.nextLine());
                 break;
             }
             catch (NumberFormatException ignore) {
@@ -124,7 +124,7 @@ public class Billing
         {
             System.out.println("Enter the weekly discount: ");
             try {
-                weeklyDiscount = Double.parseDouble(keyboard.nextLine());
+                weeklyDiscount = Double.parseDouble(in.nextLine());
                 break;
             }
             catch (NumberFormatException ignore) {
