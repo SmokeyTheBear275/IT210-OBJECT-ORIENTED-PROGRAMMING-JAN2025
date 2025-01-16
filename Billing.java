@@ -13,17 +13,16 @@ public class Billing
     public static void main(String[] args)
     {
         //define variables
-        double price
-        int quantity
-        double couponValue
-        double weeklyDiscount
-
-        boolean ynQuantity
-        boolean ynCouponValue
-        boolean ynWeeklyDiscount
+        double price;
+        int quantity;
+        double couponValue;
+        double weeklyDiscount;
+        boolean ynQuantity; 
+        boolean ynCouponValue;
+        boolean ynWeeklyDiscount;
 
         //create scanner
-        Scanner keyboard = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         //get price and determine it is a double / integer then re-ask for proper input
         while (true) {
@@ -106,7 +105,7 @@ public class Billing
             break;
             } 
         else if (answer.equals("n")) {
-            ynCouponValue = false;
+            ynWeeklyDiscount = false;
             break;
             } 
         else {
