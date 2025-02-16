@@ -42,7 +42,6 @@ public class ArrayMethodDemo {
         //First method print array in order
         public static void printArray ( int[] array){
             for (int num : array) {
-
                 System.out.print(num + " ");
             }
         }
@@ -51,9 +50,7 @@ public class ArrayMethodDemo {
         //Second method print array in reverse
         public static void printArrayReverse ( int[] array){
             for (int i = array.length - 1; i >= 0; i--) {
-
                 System.out.print(array[i] + " ");
-
             }
         }
 
