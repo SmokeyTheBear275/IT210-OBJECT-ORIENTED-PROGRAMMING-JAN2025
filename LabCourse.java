@@ -11,7 +11,7 @@ public class LabCourse extends CollegeCourse{
 
     //Reference parent constructor and adjust the fee for the lab
     public LabCourse(String dept, int courseNum, int credits) {
-        super(dept, courseNum, credits)
+        super(dept, courseNum, credits);
         this.fee = (credits * 120) + 50;
     }
 

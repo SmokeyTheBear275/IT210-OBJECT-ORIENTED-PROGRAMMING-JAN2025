@@ -10,9 +10,9 @@
 public class CollegeCourse {
 
     //Establish data fields
-    private String dept;
-    private int courseNum;
-    private int credits;
+    public String dept;
+    public int courseNum;
+    public int credits;
     public double fee;
 
     //Establish Constructor
