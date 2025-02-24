@@ -13,7 +13,7 @@ public class CollegeCourse {
     private String dept;
     private int courseNum;
     private int credits;
-    private double fee;
+    public double fee;
 
     //Establish Constructor
     public CollegeCourse(String dept, int courseNum, int credits) {
