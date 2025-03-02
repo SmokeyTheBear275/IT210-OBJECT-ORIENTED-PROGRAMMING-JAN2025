@@ -1,12 +1,9 @@
 import java.io.*;
-import java.util.Scanner;
 
 /**
  * Hayden Ross
- * M7.4 Programming Assignment 7
- * Define LabCourse
- * subclass of CollegeCourse.Java
- * Establish fee based upon if lab required
+ * M8.4 Programming Assignment 8
+ * Input text file read it then output to another file as all lowercase
  */
 
 public class LowerCase {
@@ -25,7 +22,7 @@ public class LowerCase {
         PrintWriter printWriter = new PrintWriter(new FileWriter(outputFile));
 
         //Create string variable to hold text from readers
-        String text = null;
+        String text;
 
         //Create loop (while) to read until end of file (!= null) using the bufferedReader.
         while ((text = bufferedReader.readLine()) != null) {
@@ -40,5 +37,4 @@ public class LowerCase {
         printWriter.close();
 
     }
-
 }
