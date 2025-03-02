@@ -14,4 +14,4 @@ M6.4 = ArraysMethodDemo
 
 M7.4 = CollegeCourse, LabCourse, UseCourse
 
-M8.4 = 
+M8.4 = LowerCase, Input.txt, Output.txt
